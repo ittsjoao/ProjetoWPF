@@ -1,0 +1,401 @@
+﻿<!-- =============================================================
+     VestidoControl - Formulário de Nota Fiscal
+     =============================================================
+     Este é o formulário principal para criar notas fiscais.
+     O layout é baseado na nota física da Black Team.
+     Campos: Dados do cliente, Datas, Descrição, Valores, Acessórios
+     Botões: Salvar no banco, Gerar PDF
+     ============================================================= -->
+
+<UserControl x:Class="ProjetoWPF.VestidoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjetoWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="600"
+             Background="#F5F5F5">
+    
+    <!-- Recursos/Estilos do formulário -->
+    <UserControl.Resources>
+        <!-- Estilo para os labels (textos) -->
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#34495E"/>
+            <Setter Property="Margin" Value="0,5,5,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <!-- Estilo para os campos de texto -->
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="BorderBrush" Value="#BDC3C7"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        
+        <!-- Estilo para os botões -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- Estilo para checkboxes -->
+        <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="Foreground" Value="#34495E"/>
+        </Style>
+    </UserControl.Resources>
+
+    <!-- Container principal com rolagem -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Border Background="White" 
+                CornerRadius="10" 
+                Margin="10" 
+                Padding="20"
+                BorderBrush="#34495E"
+                BorderThickness="2">
+            
+            <StackPanel>
+                
+                <!-- ========== CABEÇALHO ========== -->
+                <StackPanel HorizontalAlignment="Center" Margin="0,0,0,15">
+                    <!-- Logo/Nome da empresa -->
+                    <TextBlock Text="Black Team" 
+                               FontSize="32" 
+                               FontWeight="Bold" 
+                               FontStyle="Italic"
+                               Foreground="#34495E"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Ternos e Vestidos para festas" 
+                               FontSize="12" 
+                               Foreground="#7F8C8D"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="(31) 2524-3199 / 9 9341-3966" 
+                               FontSize="11" 
+                               Foreground="#7F8C8D"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="@blackteam.vestidos" 
+                               FontSize="11" 
+                               Foreground="#7F8C8D"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Número da Nota -->
+                <Border Background="#E74C3C" CornerRadius="5" Padding="10,5" 
+                        HorizontalAlignment="Right" Margin="0,0,0,15">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Nota Nº: " FontSize="14" 
+                                   Foreground="White" FontWeight="Bold"/>
+                        <TextBlock x:Name="txtNumeroNota" Text="010001" 
+                                   FontSize="14" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Linha separadora -->
+                <Rectangle Height="2" Fill="#34495E" Margin="0,0,0,15"/>
+
+                <!-- ========== DADOS DO CLIENTE ========== -->
+                <TextBlock Text="📋 DADOS DO CLIENTE" FontSize="14" 
+                           FontWeight="Bold" Foreground="#2980B9" Margin="0,0,0,10"/>
+                
+                <!-- Grid para organizar os campos -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Nome -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Nome:" 
+                               Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtNome" 
+                             Style="{StaticResource TextBoxStyle}"/>
+
+                    <!-- Endereço + Número -->
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Endereço:" 
+                               Style="{StaticResource LabelStyle}"/>
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" x:Name="txtEndereco" 
+                                 Style="{StaticResource TextBoxStyle}" Margin="0,5,5,5"/>
+                        <TextBox Grid.Column="1" x:Name="txtNumeroEnd" 
+                                 Style="{StaticResource TextBoxStyle}"/>
+                    </Grid>
+
+                    <!-- Bairro + Cidade -->
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Bairro:" 
+                               Style="{StaticResource LabelStyle}"/>
+                    <Grid Grid.Row="2" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" x:Name="txtBairro" 
+                                 Style="{StaticResource TextBoxStyle}" Margin="0,5,5,5"/>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <TextBlock Text="Cidade:" Style="{StaticResource LabelStyle}" 
+                                       Margin="10,5,5,5"/>
+                            <TextBox x:Name="txtCidade" Style="{StaticResource TextBoxStyle}" 
+                                     Width="150"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Telefone -->
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Telefone:" 
+                               Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtTelefone" 
+                             Style="{StaticResource TextBoxStyle}"/>
+
+                    <!-- RG + CPF -->
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="RG:" 
+                               Style="{StaticResource LabelStyle}"/>
+                    <Grid Grid.Row="4" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" x:Name="txtRG" 
+                                 Style="{StaticResource TextBoxStyle}" Margin="0,5,5,5"/>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <TextBlock Text="CPF:" Style="{StaticResource LabelStyle}" 
+                                       Margin="10,5,5,5"/>
+                            <TextBox x:Name="txtCPF" Style="{StaticResource TextBoxStyle}" 
+                                     Width="180"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <!-- Linha separadora -->
+                <Rectangle Height="1" Fill="#BDC3C7" Margin="0,15"/>
+
+                <!-- ========== DATAS ========== -->
+                <TextBlock Text="📅 DATAS" FontSize="14" FontWeight="Bold" 
+                           Foreground="#2980B9" Margin="0,0,0,10"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Data do Evento -->
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock Text="Data do Evento:" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtDataEvento" Style="{StaticResource TextBoxStyle}" 
+                                 Width="120"/>
+                    </StackPanel>
+
+                    <!-- Retirar -->
+                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Text="Retirar:" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtRetirar" Style="{StaticResource TextBoxStyle}" 
+                                 Width="120"/>
+                    </StackPanel>
+
+                    <!-- Prova -->
+                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock Text="Prova:" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtProva" Style="{StaticResource TextBoxStyle}" 
+                                 Width="120"/>
+                    </StackPanel>
+
+                    <!-- Devolução -->
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Text="Devolução:" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtDevolucao" Style="{StaticResource TextBoxStyle}" 
+                                 Width="120"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Linha separadora -->
+                <Rectangle Height="1" Fill="#BDC3C7" Margin="0,15"/>
+
+                <!-- ========== DESCRIÇÃO DOS PRODUTOS ========== -->
+                <TextBlock Text="👗 DESCRIÇÃO DOS PRODUTOS" FontSize="14" 
+                           FontWeight="Bold" Foreground="#2980B9" Margin="0,0,0,10"/>
+                
+                <TextBox x:Name="txtDescricao" 
+                         Style="{StaticResource TextBoxStyle}"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         Height="100"
+                         VerticalScrollBarVisibility="Auto"/>
+
+                <!-- Linha separadora -->
+                <Rectangle Height="1" Fill="#BDC3C7" Margin="0,15"/>
+
+                <!-- ========== VALORES ========== -->
+                <TextBlock Text="💰 VALORES" FontSize="14" FontWeight="Bold" 
+                           Foreground="#2980B9" Margin="0,0,0,10"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Valor -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock Text="Valor: R$" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtValor" Style="{StaticResource TextBoxStyle}" 
+                                 Width="100" TextChanged="CalcularRestante"/>
+                    </StackPanel>
+
+                    <!-- Sinal -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Text="Sinal: R$" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtSinal" Style="{StaticResource TextBoxStyle}" 
+                                 Width="100" TextChanged="CalcularRestante"/>
+                    </StackPanel>
+
+                    <!-- Restante (calculado automaticamente) -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                        <TextBlock Text="Restante: R$" Style="{StaticResource LabelStyle}"/>
+                        <TextBlock x:Name="txtRestante" Text="0,00" FontSize="14" 
+                                   FontWeight="Bold" Foreground="#E74C3C" 
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Linha separadora -->
+                <Rectangle Height="1" Fill="#BDC3C7" Margin="0,15"/>
+
+                <!-- ========== ACESSÓRIOS ========== -->
+                <TextBlock Text="🎀 ACESSÓRIOS" FontSize="14" FontWeight="Bold" 
+                           Foreground="#2980B9" Margin="0,0,0,10"/>
+
+                <WrapPanel>
+                    <CheckBox x:Name="chkGravata" Content="Gravata" 
+                              Style="{StaticResource CheckBoxStyle}"/>
+                    <CheckBox x:Name="chkSapato" Content="Sapato" 
+                              Style="{StaticResource CheckBoxStyle}"/>
+                    <CheckBox x:Name="chkClutch" Content="Clutch" 
+                              Style="{StaticResource CheckBoxStyle}"/>
+                    <CheckBox x:Name="chkEstola" Content="Estola" 
+                              Style="{StaticResource CheckBoxStyle}"/>
+                    <CheckBox x:Name="chkCamisa" Content="Camisa" 
+                              Style="{StaticResource CheckBoxStyle}"/>
+                    <CheckBox x:Name="chkColete" Content="Colete" 
+                              Style="{StaticResource CheckBoxStyle}"/>
+                </WrapPanel>
+
+                <!-- Linha separadora -->
+                <Rectangle Height="1" Fill="#BDC3C7" Margin="0,15"/>
+
+                <!-- ========== INFORMAÇÕES FINAIS ========== -->
+                <TextBlock Text="📝 INFORMAÇÕES FINAIS" FontSize="14" 
+                           FontWeight="Bold" Foreground="#2980B9" Margin="0,0,0,10"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Data Contagem -->
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock Text="Data:" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtDataContagem" Style="{StaticResource TextBoxStyle}" 
+                                 Width="120"/>
+                    </StackPanel>
+
+                    <!-- Atendente -->
+                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock Text="Atendente:" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtAtendente" Style="{StaticResource TextBoxStyle}" 
+                                 Width="200"/>
+                    </StackPanel>
+
+                    <!-- Locatário -->
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Text="Locatário:" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtLocatario" Style="{StaticResource TextBoxStyle}" 
+                                 Width="200"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Linha separadora -->
+                <Rectangle Height="2" Fill="#34495E" Margin="0,20,0,15"/>
+
+                <!-- ========== BOTÕES ========== -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    
+                    <!-- Botão Limpar -->
+                    <Button x:Name="btnLimpar" 
+                            Content="🗑️ Limpar" 
+                            Background="#95A5A6" 
+                            Foreground="White"
+                            Style="{StaticResource ButtonStyle}"
+                            Click="BtnLimpar_Click"/>
+                    
+                    <!-- Botão Salvar -->
+                    <Button x:Name="btnSalvar" 
+                            Content="💾 Salvar" 
+                            Background="#27AE60" 
+                            Foreground="White"
+                            Style="{StaticResource ButtonStyle}"
+                            Click="BtnSalvar_Click"/>
+                    
+                    <!-- Botão Gerar PDF -->
+                    <Button x:Name="btnGerarPdf" 
+                            Content="📄 Gerar PDF" 
+                            Background="#3498DB" 
+                            Foreground="White"
+                            Style="{StaticResource ButtonStyle}"
+                            Click="BtnGerarPdf_Click"/>
+                    
+                </StackPanel>
+
+                <!-- Endereço no rodapé -->
+                <TextBlock Text="Av. Londres - nº 49. Loja 05 - Bairro Eldorado - Contagem/MG" 
+                           FontSize="10" 
+                           Foreground="#7F8C8D"
+                           HorizontalAlignment="Center"
+                           Margin="0,20,0,0"/>
+
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
+</UserControl>

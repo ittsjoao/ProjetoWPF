@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <!-- Pacotes NuGet necessários para o projeto -->
+  <ItemGroup>
+    <!-- SQLite: banco de dados local para salvar clientes e notas -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.0" />
+    <!-- itext7: biblioteca para criar arquivos PDF -->
+    <PackageReference Include="itext7" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

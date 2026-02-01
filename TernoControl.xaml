@@ -1,0 +1,229 @@
+<UserControl x:Class="ProjetoWPF.TernoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjetoWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#F5F5F5">
+    <UserControl.Resources>
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+        
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderBrush" Value="#BDC3C7"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+        </Style>
+        
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#27AE60"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#229954"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+            <Setter Property="Background" Value="#E74C3C"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#C0392B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    <Border Background="White" CornerRadius="10" Padding="30" Margin="10">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Cabeçalho -->
+                <TextBlock Text="Nova Nota - Terno" 
+                           FontSize="28" 
+                           FontWeight="Bold" 
+                           Foreground="#2C3E50" 
+                           Margin="0,0,0,30"/>
+                
+                <!-- Seção: Dados do Cliente -->
+                <Border Background="#ECF0F1" 
+                        CornerRadius="8" 
+                        Padding="20" 
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="Dados do Cliente" 
+                                   FontSize="18" 
+                                   FontWeight="Bold" 
+                                   Foreground="#34495E" 
+                                   Margin="0,0,0,15"/>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Nome Completo" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtNomeCliente" Style="{StaticResource TextBoxStyle}"/>
+                                
+                                <TextBlock Text="Telefone" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtTelefone" Style="{StaticResource TextBoxStyle}"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="CPF/CNPJ" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtCpfCnpj" Style="{StaticResource TextBoxStyle}"/>
+                                
+                                <TextBlock Text="Email" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtEmail" Style="{StaticResource TextBoxStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Seção: Detalhes do Terno -->
+                <Border Background="#E8F6F3" 
+                        CornerRadius="8" 
+                        Padding="20" 
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="Detalhes do Terno" 
+                                   FontSize="18" 
+                                   FontWeight="Bold" 
+                                   Foreground="#34495E" 
+                                   Margin="0,0,0,15"/>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Modelo/Tipo" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtModelo" Style="{StaticResource TextBoxStyle}"/>
+                                
+                                <TextBlock Text="Cor" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtCor" Style="{StaticResource TextBoxStyle}"/>
+                                
+                                <TextBlock Text="Tecido" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtTecido" Style="{StaticResource TextBoxStyle}"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Tamanho" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtTamanho" Style="{StaticResource TextBoxStyle}"/>
+                                
+                                <TextBlock Text="Quantidade" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtQuantidade" Text="1" Style="{StaticResource TextBoxStyle}"/>
+                                
+                                <TextBlock Text="Valor Unitário (R$)" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtValorUnitario" Style="{StaticResource TextBoxStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                        
+                        <TextBlock Text="Observações" Style="{StaticResource LabelStyle}"/>
+                        <TextBox x:Name="txtObservacoes" 
+                                 TextWrapping="Wrap" 
+                                 AcceptsReturn="True"
+                                 Height="80"
+                                 Style="{StaticResource TextBoxStyle}"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Seção: Totais -->
+                <Border Background="#FEF9E7" 
+                        CornerRadius="8" 
+                        Padding="20" 
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="Totais" 
+                                   FontSize="18" 
+                                   FontWeight="Bold" 
+                                   Foreground="#34495E" 
+                                   Margin="0,0,0,15"/>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Desconto (%)" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtDesconto" Text="0" Style="{StaticResource TextBoxStyle}"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Valor Total (R$)" Style="{StaticResource LabelStyle}"/>
+                                <TextBox x:Name="txtValorTotal" 
+                                         IsReadOnly="True" 
+                                         Background="#F8F9F9"
+                                         FontSize="18"
+                                         FontWeight="Bold"
+                                         Foreground="#27AE60"
+                                         Style="{StaticResource TextBoxStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Botões de Ação -->
+                <Grid Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Content="Salvar Nota" 
+                            Grid.Column="0"
+                            x:Name="btnSalvar"
+                            Style="{StaticResource ButtonStyle}"/>
+                    
+                    <Button Content="Calcular Total" 
+                            Grid.Column="2"
+                            x:Name="btnCalcular"
+                            Style="{StaticResource ButtonStyle}"
+                            Background="#3498DB"/>
+                    
+                    <Button Content="Limpar" 
+                            Grid.Column="4"
+                            x:Name="btnLimpar"
+                            Style="{StaticResource SecondaryButtonStyle}"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</UserControl>

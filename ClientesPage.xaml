@@ -1,0 +1,232 @@
+﻿<!-- =============================================================
+     ClientesPage - Página de Gerenciamento de Clientes
+     =============================================================
+     Esta página permite:
+       - Ver lista de todos os clientes cadastrados
+       - Adicionar novos clientes
+       - Editar clientes existentes
+       - Excluir clientes
+     ============================================================= -->
+
+<Page x:Class="ProjetoWPF.ClientesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjetoWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Background="#F5F5F5">
+    
+    <!-- Recursos/Estilos da página -->
+    <Page.Resources>
+        <!-- Estilo para labels -->
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#34495E"/>
+            <Setter Property="Margin" Value="0,5,10,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <!-- Estilo para campos de texto -->
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="BorderBrush" Value="#BDC3C7"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        
+        <!-- Estilo para botões -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <!-- Título -->
+            <RowDefinition Height="Auto"/>
+            <!-- Formulário de cadastro -->
+            <RowDefinition Height="Auto"/>
+            <!-- Lista de clientes -->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ========== TÍTULO ========== -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="👥 Gerenciamento de Clientes" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="#34495E"/>
+            <TextBlock Text="Cadastre e gerencie seus clientes" 
+                       FontSize="12" 
+                       Foreground="#7F8C8D"/>
+        </StackPanel>
+
+        <!-- ========== FORMULÁRIO DE CADASTRO ========== -->
+        <Border Grid.Row="1" 
+                Background="White" 
+                CornerRadius="10" 
+                Padding="20" 
+                Margin="0,0,0,20"
+                BorderBrush="#34495E"
+                BorderThickness="1">
+            <StackPanel>
+                <TextBlock Text="📝 Dados do Cliente" 
+                           FontSize="16" 
+                           FontWeight="Bold" 
+                           Foreground="#2980B9" 
+                           Margin="0,0,0,15"/>
+
+                <!-- Linha 1: Nome -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Nome:" Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Column="1" x:Name="txtNome" Style="{StaticResource TextBoxStyle}"/>
+                </Grid>
+
+                <!-- Linha 2: Endereço + Número -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Endereço:" Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Column="1" x:Name="txtEndereco" Style="{StaticResource TextBoxStyle}" Margin="0,5,10,5"/>
+                    <TextBox Grid.Column="2" x:Name="txtNumero" Style="{StaticResource TextBoxStyle}"/>
+                </Grid>
+
+                <!-- Linha 3: Bairro + Cidade -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Bairro:" Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Column="1" x:Name="txtBairro" Style="{StaticResource TextBoxStyle}" Margin="0,5,10,5"/>
+                    <TextBlock Grid.Column="2" Text="Cidade:" Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Column="3" x:Name="txtCidade" Style="{StaticResource TextBoxStyle}"/>
+                </Grid>
+
+                <!-- Linha 4: Telefone + RG + CPF -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Telefone:" Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Column="1" x:Name="txtTelefone" Style="{StaticResource TextBoxStyle}" Margin="0,5,10,5"/>
+                    <TextBlock Grid.Column="2" Text="RG:" Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Column="3" x:Name="txtRG" Style="{StaticResource TextBoxStyle}" Margin="0,5,10,5"/>
+                    <TextBlock Grid.Column="4" Text="CPF:" Style="{StaticResource LabelStyle}"/>
+                    <TextBox Grid.Column="5" x:Name="txtCPF" Style="{StaticResource TextBoxStyle}"/>
+                </Grid>
+
+                <!-- Botões -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+                    <Button x:Name="btnLimpar" 
+                            Content="🗑️ Limpar" 
+                            Background="#95A5A6" 
+                            Foreground="White"
+                            Style="{StaticResource ButtonStyle}"
+                            Click="BtnLimpar_Click"/>
+                    <Button x:Name="btnSalvar" 
+                            Content="💾 Salvar" 
+                            Background="#27AE60" 
+                            Foreground="White"
+                            Style="{StaticResource ButtonStyle}"
+                            Click="BtnSalvar_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- ========== LISTA DE CLIENTES ========== -->
+        <Border Grid.Row="2" 
+                Background="White" 
+                CornerRadius="10" 
+                Padding="20"
+                BorderBrush="#34495E"
+                BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título + Busca -->
+                <Grid Grid.Row="0" Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="📋 Clientes Cadastrados" 
+                               FontSize="16" FontWeight="Bold" Foreground="#2980B9"/>
+                    <TextBox Grid.Column="1" x:Name="txtBusca" 
+                             Style="{StaticResource TextBoxStyle}" 
+                             Margin="20,0"
+                             TextChanged="TxtBusca_TextChanged"/>
+                    <Button Grid.Column="2" 
+                            Content="🔄 Atualizar" 
+                            Background="#3498DB" 
+                            Foreground="White"
+                            Style="{StaticResource ButtonStyle}"
+                            Click="BtnAtualizar_Click"/>
+                </Grid>
+
+                <!-- Tabela de clientes -->
+                <DataGrid Grid.Row="1" 
+                          x:Name="dgClientes"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          SelectionMode="Single"
+                          SelectionChanged="DgClientes_SelectionChanged"
+                          CanUserAddRows="False"
+                          GridLinesVisibility="Horizontal"
+                          HeadersVisibility="Column"
+                          Background="White"
+                          BorderThickness="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                        <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                        <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Width="120"/>
+                        <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}" Width="120"/>
+                        <DataGridTextColumn Header="CPF" Binding="{Binding CPF}" Width="120"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- ID oculto para edição -->
+        <TextBlock x:Name="txtIdCliente" Visibility="Collapsed"/>
+    </Grid>
+</Page>

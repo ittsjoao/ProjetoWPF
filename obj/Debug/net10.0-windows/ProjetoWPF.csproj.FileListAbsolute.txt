@@ -1,0 +1,112 @@
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\MainWindow.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\App.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF_MarkupCompile.cache
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF_MarkupCompile.lref
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ClientesPage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ConfigPage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\HomePage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\NotasPage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\bin\Debug\net10.0-windows\ProjetoWPF.exe
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\bin\Debug\net10.0-windows\ProjetoWPF.deps.json
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\bin\Debug\net10.0-windows\ProjetoWPF.runtimeconfig.json
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\bin\Debug\net10.0-windows\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\bin\Debug\net10.0-windows\ProjetoWPF.pdb
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\MainWindow.baml
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ClientesPage.baml
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ConfigPage.baml
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\HomePage.baml
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\NotasPage.baml
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.g.resources
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.AssemblyInfoInputs.cache
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.AssemblyInfo.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.csproj.CoreCompileInputs.cache
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\refint\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.pdb
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ProjetoWPF.genruntimeconfig.cache
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\ref\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\TernoControl.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\VestidoControl.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\TernoControl.baml
+C:\Users\Auster\source\repos\ProjetoWPF\ProjetoWPF\obj\Debug\net10.0-windows\VestidoControl.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ClientesPage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ConfigPage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\HomePage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\MainWindow.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\NotasPage.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\TernoControl.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\VestidoControl.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\App.g.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF_MarkupCompile.cache
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF_MarkupCompile.lref
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\refint\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.pdb
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\ProjetoWPF.exe
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\ProjetoWPF.deps.json
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\ProjetoWPF.runtimeconfig.json
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\ProjetoWPF.pdb
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ClientesPage.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ConfigPage.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\HomePage.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\MainWindow.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\NotasPage.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\TernoControl.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\VestidoControl.baml
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.g.resources
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.AssemblyInfoInputs.cache
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.AssemblyInfo.cs
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.csproj.CoreCompileInputs.cache
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.genruntimeconfig.cache
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ref\ProjetoWPF.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.barcodes.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.bouncy-castle-connector.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.forms.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.io.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.kernel.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.layout.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.pdfa.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.pdfua.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.sign.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.styledxmlparser.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.svg.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\itext.commons.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Data.Sqlite.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\Newtonsoft.Json.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\SQLitePCLRaw.core.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-musl-arm\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-ppc64le\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\bin\Debug\net10.0-windows\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.csproj.AssemblyReference.cache
+C:\Users\Auster\source\repos\ProjetoWPF - Copia\obj\Debug\net10.0-windows\ProjetoWPF.csproj.Up2Date
